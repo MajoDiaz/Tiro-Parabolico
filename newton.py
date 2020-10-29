@@ -50,7 +50,7 @@ def draw():
         dot(20, colors[t])
 
     if inside(ball):
-        #aquí se le da el color al proyectil
+        #aquí se le da el color y tamaño al proyectil
         goto(ball.x, ball.y)
         dot(6, 'red')
 
@@ -90,7 +90,8 @@ def move():
             si los objetivos llegan al otro lado de la pantalla'''
             '''Para modificar esto, simplemente se elimino el return
             y se puso le cambio el valor de x para que siguieran 
-            apareciendo objetivos'''
+            apareciendo los mismos objetivos del lado derecho de la 
+            pantalla'''
             target.x = 200
     
     '''El ontimeter regula la velocidad del proyectil
