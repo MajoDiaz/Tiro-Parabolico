@@ -16,6 +16,7 @@ from freegames import vector
 #A01701879 María José Díaz Sánchez
 #A00829556 Santiago Gonzalez Irigoyen
 #Este código es un juego de tiro parabólico
+#29 de octubre de 2020
 
 ball = vector(-200, -200)
 speed = vector(0, 0)
@@ -40,11 +41,14 @@ def draw():
     for target in targets:
         goto(target.x, target.y)
         #crear libreria de colores para los blancos
+        #estos colores se usan para cambiar de manera aleatoria 
+        #a los objetivos
         colors = ['cyan','yellow','light green','red','pink']
         t = randint(0,4)
         dot(20, colors[t])
 
     if inside(ball):
+        #aquí se le da el color al proyectil
         goto(ball.x, ball.y)
         dot(6, 'red')
 
@@ -64,6 +68,8 @@ def move():
         target.x -= 1.5
 
     if inside(ball):
+        '''Aquí no se movió nada porque se notó 
+        que esto acortaba la altura del proyectil'''
         speed.y -= 0.35
         ball.move(speed)
 
@@ -84,6 +90,7 @@ def move():
     más rápido'''
     ontimer(move, 35)
 
+#aquí se crea el espacio del juego
 setup(420, 420, 370, 0)
 hideturtle()
 up()
