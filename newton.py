@@ -13,6 +13,10 @@ from random import randrange, randint
 from turtle import *
 from freegames import vector
 
+#A01701879 María José Díaz Sánchez
+#A00829556 Santiago Gonzalez Irigoyen
+#Este código es un juego de tiro parabólico
+
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
@@ -35,6 +39,7 @@ def draw():
 
     for target in targets:
         goto(target.x, target.y)
+        #crear libreria de colores para los blancos
         colors = ['cyan','yellow','light green','red','pink']
         t = randint(0,4)
         dot(20, colors[t])
@@ -53,7 +58,10 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 2
+        '''Aquí se regula el movimiento
+        de los objetivos, al aumentar su
+        movimiento en x aumenta si velocidad'''
+        target.x -= 1.5
 
     if inside(ball):
         speed.y -= 0.35
@@ -71,14 +79,17 @@ def move():
     for target in targets:
         if not inside(target):
             return
-
-    ontimer(move, 50)
+    '''El ontimeter regula la velocidad del proyectil
+    en este caso se cambio de 50 a 35 para hacer al juego
+    más rápido'''
+    ontimer(move, 35)
 
 setup(420, 420, 370, 0)
 hideturtle()
 up()
 tracer(False)
 onscreenclick(tap)
+#mientras 'True' sea 'True' (i.e. siempre), se corre move() en loop
 while True:
     move()
 done()
