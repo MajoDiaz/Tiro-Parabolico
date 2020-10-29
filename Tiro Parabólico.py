@@ -5,6 +5,7 @@ from freegames import vector
 #A01701879 María José Díaz Sánchez
 #A00829556 Santiago Gonzalez Irigoyen
 #Este código es un juego de tiro parabólico
+#29 de octubre de 2020
 
 ball = vector(-200, -200)
 speed = vector(0, 0)
@@ -50,6 +51,8 @@ def move():
         target.x -= 1.5
 
     if inside(ball):
+        '''Aquí no se cambio nada porque se notó
+        que eso disminuye la altura del proyectil'''
         speed.y -= 0.35
         ball.move(speed)
 
@@ -66,10 +69,11 @@ def move():
         if not inside(target):
             return
 '''El ontimeter regula la velocidad del proyectil
-en este caso se cambio de 50 a 35 para hacer al juego
+en este caso se cambio de 50 a 35 para hacer al proyectil
 más rápido'''
     ontimer(move, 35)
 
+#En estos comandos se prepara el área de juego
 setup(420, 420, 370, 0)
 hideturtle()
 up()
