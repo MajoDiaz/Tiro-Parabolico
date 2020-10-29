@@ -24,6 +24,8 @@ targets = []
 
 def tap(x, y):
     "Respond to screen tap."
+    #define la dirección del proeyctil
+    #depende de donde seleccione el usuario
     if not inside(ball):
         ball.x = -199
         ball.y = -199
@@ -84,11 +86,17 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+            '''Esta función hace que el juego se detenga
+            si los objetivos llegan al otro lado de la pantalla'''
+            '''Para modificar esto, simplemente se elimino el return
+            y se puso le cambio el valor de x para que siguieran 
+            apareciendo objetivos'''
+            x = 200
+    
     '''El ontimeter regula la velocidad del proyectil
-    en este caso se cambio de 50 a 35 para hacer al juego
+    en este caso se cambio de 50 a 20 para hacer al juego
     más rápido'''
-    ontimer(move, 35)
+    ontimer(move, 20)
 
 #aquí se crea el espacio del juego
 setup(420, 420, 370, 0)
@@ -96,7 +104,5 @@ hideturtle()
 up()
 tracer(False)
 onscreenclick(tap)
-#mientras 'True' sea 'True' (i.e. siempre), se corre move() en loop
-while True:
-    move()
+move()
 done()
