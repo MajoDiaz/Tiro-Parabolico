@@ -77,5 +77,6 @@ hideturtle()
 up()
 tracer(False)
 onscreenclick(tap)
-move()
+while True:
+    move()
 done()
