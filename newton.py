@@ -91,7 +91,7 @@ def move():
             '''Para modificar esto, simplemente se elimino el return
             y se puso le cambio el valor de x para que siguieran 
             apareciendo objetivos'''
-            x = 200
+            target.x = 200
     
     '''El ontimeter regula la velocidad del proyectil
     en este caso se cambio de 50 a 20 para hacer al juego
