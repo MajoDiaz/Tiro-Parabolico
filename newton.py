@@ -9,7 +9,7 @@ Exercises
 
 """
 
-from random import randrange
+from random import randrange, randint
 from turtle import *
 from freegames import vector
 
@@ -35,7 +35,9 @@ def draw():
 
     for target in targets:
         goto(target.x, target.y)
-        dot(20, 'blue')
+        colors = ['cyan','yellow','light green','red','pink']
+        t = randint(0,4)
+        dot(20, colors[t])
 
     if inside(ball):
         goto(ball.x, ball.y)
@@ -45,13 +47,13 @@ def draw():
 
 def move():
     "Move ball and targets."
-    if randrange(40) == 0:
+    if randrange(20) == 0:
         y = randrange(-150, 150)
         target = vector(200, y)
         targets.append(target)
 
     for target in targets:
-        target.x -= 0.5
+        target.x -= 2
 
     if inside(ball):
         speed.y -= 0.35
