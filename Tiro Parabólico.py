@@ -44,7 +44,10 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 0.5
+        '''Aquí se regula el movimiento 
+        de los objetivos, al aumentar su
+        movimiento en x aumenta si velocidad'''
+        target.x -= 1.5
 
     if inside(ball):
         speed.y -= 0.35
@@ -62,8 +65,10 @@ def move():
     for target in targets:
         if not inside(target):
             return
-
-    ontimer(move, 50)
+'''El ontimeter regula la velocidad del proyectil
+en este caso se cambio de 50 a 35 para hacer al juego
+más rápido'''
+    ontimer(move, 35)
 
 setup(420, 420, 370, 0)
 hideturtle()
