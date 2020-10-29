@@ -2,6 +2,10 @@ from random import randrange
 from turtle import *
 from freegames import vector
 
+#A01701879 María José Díaz Sánchez
+#A00829556 Santiago Gonzalez Irigoyen
+#Este código es un juego de tiro parabólico
+
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
